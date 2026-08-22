@@ -1,0 +1,21 @@
+service: fovra-lambda-api
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: us-east-1
+  memorySize: 512
+  timeout: 30
+  httpApi:
+    payload: "2.0"
+
+functions:
+  app:
+    handler: handler.app
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: any
+      - httpApi:
+          path: /
+          method: any
