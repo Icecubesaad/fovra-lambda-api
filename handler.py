@@ -61,3 +61,8 @@ def version():
 @app_fastapi.get("/whoami")
 def whoami():
     return {"release": "C"}
+
+
+@app_fastapi.get("/probe-d")
+def probe_d():
+    return {"release": "D"}
