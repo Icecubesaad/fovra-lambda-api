@@ -51,18 +51,3 @@ def resolve_link(slug: str):
 
 # Lambda entrypoint: the Runtime API event loop bridges through Mangum.
 app = Mangum(app_fastapi, lifespan="off")
-
-
-@app_fastapi.get("/version")
-def version():
-    return {"release": "B"}
-
-
-@app_fastapi.get("/whoami")
-def whoami():
-    return {"release": "C"}
-
-
-@app_fastapi.get("/probe-d")
-def probe_d():
-    return {"release": "D"}
